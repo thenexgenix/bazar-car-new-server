@@ -19,6 +19,10 @@ const client = new MongoClient(uri, {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Bazar Card Server!')
+})
+
 async function run() {
     try {
         // await client.connect();
@@ -207,10 +211,6 @@ async function run() {
 }
 run().catch(console.dir);
 
-
-app.get('/', (req, res) => {
-    res.send('Bazar Card Server!')
-})
 
 app.listen(port, () => {
     console.log(`Bazar Card Server listening on port ${port}`)
